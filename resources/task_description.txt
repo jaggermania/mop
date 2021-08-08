@@ -1,0 +1,19 @@
+Description:
+
+Create Django based REST api service for financial news. Service will have two parts: REST api service and scraping service.
+REST api will be primarily used  for fetching data and scraping service will collect and store data from Yahoo finance site. 
+
+Scraper service will use Yahoo RSS feed for collecting data (https://feeds.finance.yahoo.com/rss/2.0/headline?s=AAPL&region=US&lang=en-US, getting data for AAPL symbol Apple Inc)
+Scraper service scheduler can be implemented with celery extension https://github.com/celery/django-celery-beat
+
+
+Requirements:
+- Use Django rest framework to implement REST api service. 
+- News will be fetched per symbol. 
+- Implement pagination. 
+- Use Celery for async tasks and periodic scraping
+- Use Postgresql as DB solution.
+- Collect news for following symbols, AAPL, TWTR, GC=F(GOLD), INTC
+- Dockreize project (services will be run in Docker containers)
+- Write unit tests for most important code parts
+- Submit project to Github
